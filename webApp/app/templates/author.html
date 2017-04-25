@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form>
+<h2> {{author}} </h2>
+<h3> Blog: {{infos.blog}}  </h3>
+<h3> Written articles: {{infos.articles}} </h3>
+<h3> Twitter:  <a target="_blank" href="http://twitter.com/{{infos.twitter}}">{{infos.twitter}}</a> </h3>
+<h3> Url:  <a target="_blank" href="{{infos.url}}">{{infos.url}}</a> </h3>
+
+</form>
+
+{% for post in posts %}
+<form action="" method="post" name="post">
+    <div>
+        <a target="_blank" href="{{post.url}}">{{ post.title}}</a> <br>
+        
+        {{ post.body }} . . . <br>
+         <br>
+        Date: {{post.date}}  <br>
+        <p></p>
+    </div>
+</form>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,5 @@
+from app import db
+
+class Article(db.Model):
+	id = db.Column(db.String(10), primary_key = True)
+	title = db.Column(db.String(

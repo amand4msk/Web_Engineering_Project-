@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <form class="form-style-7" action="" method="post">
+        <li> <input type="submit" name="search" value="Search"></li>
+    </form>
+               {% for post in posts %}
+            <form action="" method="post" name="post">
+                <div>
+                    <a target="_blank" href="{{post.url}}">{{ post.title}}</a> <br>
+                    
+                    {{ post.body }} . . . <br>
+                    
+                    Author: {{post.author}} <a target="_blank" href="author?author={{post.author}}">More about</a>  <br>
+                    Date: {{post.date}} <a target="_blank" href="date?date={{post.date}}">More articles from this date</a>  <br>
+                    <p></p>
+                </div>
+            </form>
+            {% endfor %}
+            <form class="form-style-7" action="" method="post" name="post">
+            <tr>
+                <td><input type="submit" name="next" value="Next {{number}}"></td>
+                <td></td>
+                 <td></td>
+            </tr>
+             </form>
+            
+{% endblock %}

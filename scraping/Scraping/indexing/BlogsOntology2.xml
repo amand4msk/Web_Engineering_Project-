@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY BlogsOntology "http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:BlogsOntology="http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology rdf:about="http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasAuthor -->
+
+    <ObjectProperty rdf:about="&BlogsOntology;hasAuthor">
+        <rdfs:domain rdf:resource="&BlogsOntology;Articles"/>
+        <rdfs:range rdf:resource="&BlogsOntology;Authors"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasAuthors -->
+
+    <ObjectProperty rdf:about="&BlogsOntology;hasAuthors">
+        <rdfs:range rdf:resource="&BlogsOntology;Authors"/>
+        <rdfs:domain rdf:resource="&BlogsOntology;Blogs"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasBlogs -->
+
+    <ObjectProperty rdf:about="&BlogsOntology;hasBlogs">
+        <rdfs:range rdf:resource="&BlogsOntology;Blogs"/>
+        <rdfs:domain rdf:resource="&BlogsOntology;Site"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasAuthorUrl -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasAuthorUrl">
+        <rdfs:domain rdf:resource="&BlogsOntology;Authors"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasBlogTitle -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasBlogTitle">
+        <rdfs:domain rdf:resource="&BlogsOntology;Blogs"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasDate -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasDate">
+        <rdfs:domain rdf:resource="&BlogsOntology;Articles"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasID -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasID">
+        <rdfs:domain rdf:resource="&BlogsOntology;Articles"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasName -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasName">
+        <rdfs:domain rdf:resource="&BlogsOntology;Authors"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasSiteTitle -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasSiteTitle">
+        <rdfs:domain rdf:resource="&BlogsOntology;Site"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasTitle -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasTitle">
+        <rdfs:domain rdf:resource="&BlogsOntology;Articles"/>
+        <rdfs:domain rdf:resource="&BlogsOntology;Blogs"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasTwitterAccount -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasTwitterAccount">
+        <rdfs:domain rdf:resource="&BlogsOntology;Authors"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#hasUrl -->
+
+    <DatatypeProperty rdf:about="&BlogsOntology;hasUrl">
+        <rdfs:domain rdf:resource="&BlogsOntology;Articles"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#Articles -->
+
+    <Class rdf:about="&BlogsOntology;Articles">
+        <rdfs:subClassOf rdf:resource="&BlogsOntology;Blogs"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#Authors -->
+
+    <Class rdf:about="&BlogsOntology;Authors">
+        <rdfs:subClassOf rdf:resource="&BlogsOntology;Articles"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#Blogs -->
+
+    <Class rdf:about="&BlogsOntology;Blogs">
+        <rdfs:subClassOf rdf:resource="&BlogsOntology;Site"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amanda/ontologies/2015/10/BlogsOntology#Site -->
+
+    <Class rdf:about="&BlogsOntology;Site"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,2 @@
+ Notre nouveau site s'affiche parfaitement avec Firefox 3.0 et Explorer 7.0  mais Explorer 6 et Safari font apparaître quelques incompatibilités. A noter que les flux RSS  ce mécanisme d'abonnement qui permet de visualiser les derniers articles postés sur un site internet depuis une liste de favoris  ne sont pas encore disponibles. Firefox permet rnéanmoins de récupérer le flux des dernières nouvelles publiées sur la page d'accueil. Son adresse est la suivante: http://www.tdg.ch/home/feed. A coller dans un lecteur de flux. 
+ 

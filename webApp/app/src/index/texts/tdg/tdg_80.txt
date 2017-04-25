@@ -1,0 +1,2 @@
+Fabio nous demande un bouton pour grossir le caractère du texte. Bonne remarque! Sachez  chers internautes  que les dernières versions des navigateurs vous permettent d'agrandir vous-mêmes l'écran et donc le texte. Ainsi Explorer 7 et Firefox 3 supportent la fonctionnalité ctrl+roulette. En clair  vous pesez sur la touche Ctrl et vous faites rouler la roulette de votre souris. l'effet est saisissant.
+ 

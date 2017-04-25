@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class ="temp123">
+<h2>How to search with Blextra </h2>
+
+<h3>Query</h3>
+Put in the words you want to search for. <br>
+If you type multiple words without any operators, all terms have to appear in the texts.<br>
+<br>
+
+For the search you can use operators.<br>
+The following operators are implemented at the moment:<br>
+<br>
+
+&#38; : all terms which are conctenate with these operators have to appear in the results<br>
+| : at least one of the term has to appear in the result<br>
+<br>
+The operators can be used together.<br>
+<br>
+Example queries:<br>
+(Sommer &#38; Eis) | (Sommer &#38; Bern)<br>
+
+<h3>Search optiones</h3>
+Stemm words: If set to true, all the terms are stemmed. <br>
+Synonym expansion: If set to true, synonyms for the terms are looked up and put in the query.<br>
+(Is not implemented for french words yet) <br>
+Just search title: If set to true, the search is just done in the title of the articles. <br>
+
+<h3>Author</h3>
+Search for a specific author. <br>
+This can be combined with "Query" and "Articles from the last ..." <br>
+or just used alone. If used alone it just gives all the articles from a this author. <br>
+
+<h3>Articles from the last...</h3>
+Search all articles from the last ... days/weeks/months/years. <br>
+
+<h3>Examples</h3>
+<div class="box">
+<i>Query: Sommer Eis <br>
+Articles from the last: 1 year(s)</i> <br>
+</div>
+<br>
+Looks for all articles which have the terms "Sommer" and "Eis"
+    inside and were written in the last year.<br>
+<br>
+<div class="box">
+<i>Query: Interview <br>
+Author: Rainer Stadler </i><br>
+</div>
+<br>
+Looks for all articles which have the term "Interview" inside and were written by Rainer Stalder.
+</div>
+
+
+<br>
+<br>
+{% endblock %}

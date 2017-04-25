@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    function change(){
+        if ({{number}} == 0 || {{number}} == None)
+        {
+            document.getElementById("next").style.visibility = "hidden";
+        }
+        else
+        {
+            document.getElementById("next").style.visibility = "visible";
+        }
+        
+        
+    }
+</script>
+<body onload="change()">
+
+<form class="form-style-4" action="" method="post" name="post">
+
+<div>
+        <label for="field1">
+            <span>Query</span>  &nbsp; {{ form.post(size=60, maxlength=140)}} <br>
+            <br>
+            <label for="field2">
+                
+                <span>Search options</span> {{form.stemmed}}   Stemm words   <br>
+                <label for="field3">
+                    <span>&nbsp;</span>  {{form.syn}} Synonym expansion<br>
+                    <label for="field4">
+                        <span>&nbsp;</span>{{form.title}} Just search in title
+                        <br>
+                        <br>
+                        
+                        <label for="field4">
+                            <span>Author</span>  &nbsp; {{ form.author(size=30, maxlength=100) }} <br>
+                            <br>
+                            <label for="field6">
+                                <span>Articles from the last</span> &nbsp; {{ form.number(size=10) }} &nbsp; {{form.time}}
+                                <br>
+                
+
+                                </div>
+
+    <li> <input type="submit" name="search" value="Search"></li>
+</form>
+<br>
+<br>
+
+                      {% for post in posts %}
+            <form action="" method="post" name="post">
+                <div>
+                    <a target="_blank" href="{{post.url}}">{{ post.title}}</a> <br>
+                    
+                    {{ post.body }} . . . <br>
+                    
+                    Author: {{post.author}} <a target="_blank" href="author?author={{post.author}}&site={{post.site}}">More about</a>  <br>
+                    Date: {{post.date}} <a target="_blank" href="date?date={{post.date}}">More articles from this date</a>  <br>
+                    <p></p>
+                </div>
+            </form>
+            {% endfor %}
+
+ <div>
+    <form class="form-style-5" action="" method="post" name="post">
+                <li><input type="submit" name="next" id="next" value="Next {{number}}"></li>
+             </form>
+</div>
+            
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form>
+<h2> {{date}} </h2>
+<h3> Written articles: {{number}} </h3>
+
+</form>
+
+{% for post in posts %}
+<form action="" method="post" name="post">
+    <div>
+        <a target="_blank" href="{{post.url}}">{{ post.title}}</a> <br>
+        {{ post.body }} . . . <br>
+         Author: {{post.author}}  <br>
+        <p></p>
+    </div>
+</form>
+{% endfor %}
+
+
+{% endblock %}
